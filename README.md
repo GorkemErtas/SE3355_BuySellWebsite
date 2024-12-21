@@ -7,6 +7,7 @@ Search Functionality: Search for products using keywords.
 Product Details: View detailed information about each product by clicking on its image or description.
 Responsive Design: Optimized layout for different screen sizes.
 Database Integration: Products and categories are dynamically populated from a database.
+
 Technologies Used
 Frontend: HTML, CSS, EJS templates
 Backend: Node.js, Express.js
