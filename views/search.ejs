@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Search Results</h1>
+    </header>
+
+    <div class="container">
+        <div class="left-section">
+            <h2>Results for "<%= query %>"</h2>
+        </div>
+        <div class="right-section">
+            <% if (products.length > 0) { %>
+                <ul class="product-list">
+                    <% products.forEach(product => { %>
+                        <li class="product-item">
+                            <a href="/product/<%= product.id %>">
+                                <img src="<%= product.image %>" class="product-image">
+                            </a> 
+                            <a href="/product/<%= product.id %>">
+                                <strong><%= product.description %></strong> - <%= product.price %> USD
+                            </a>
+                        </li>
+                    <% }); %>
+                </ul>
+            <% } else { %>
+                <p>No products found.</p>
+            <% } %>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Buy-Sell Website</p>
+    </footer>
+</body>
+</html>

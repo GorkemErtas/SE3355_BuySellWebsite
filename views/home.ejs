@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buy-Sell Website - Home</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Buy-Sell Website</h1>
+    </header>
+    
+    <div class="container">
+        <div class="left-section">
+            <form action="/search" method="get" class="search-bar">
+                <input type="text" name="q" placeholder="Search for products...">
+                <button type="submit">Search</button>
+            </form>
+            <h2>Categories</h2>
+            <ul class="product-list">
+                <% for (let category in categories) { %>
+                    <li><%= category %> (<%= categories[category] %>)</li>
+                <% } %>
+            </ul>
+        </div>
+        <div class="right-section">
+            <div class="products">
+                <% products.forEach(product => { %>
+                    <div class="product">
+                        <a href="/product/<%= product.id %>">
+                            <img src="<%= product.image %>" class="product-image">
+                        </a>
+                        <a href="/product/<%= product.id %>">
+                            <p class="description"><%= product.description %></p>
+                        </a>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Buy-Sell Website</p>
+    </footer>
+</body>
+</html>

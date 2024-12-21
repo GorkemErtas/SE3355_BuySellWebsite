@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Product Detail</h1>
+    </header>
+
+    <div class="container product-detail">
+        <img src="<%= product.image %>" alt="Product Image">
+        <div class="product-info">
+            <h2><%= product.description %></h2>
+            <p><strong>Price:</strong> <%= product.price %> TL</p>
+            <p><strong>City:</strong> <%= product.city %></p>
+            <p><strong>Category:</strong> <%= product.category %></p>
+            <p><strong>Ad No:</strong> <%= product.ad_no %></p>
+            <a href="/">Back to Home</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Buy-Sell Website</p>
+    </footer>
+</body>
+</html>
