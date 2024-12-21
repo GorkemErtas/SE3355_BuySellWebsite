@@ -13,18 +13,22 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Setup Node.js
+    - name: Set up Git remote URL
+      run: git remote set-url origin https://github.com/GorkemErtas/SE3355_BuySellWebsite.git
+
+    - name: Pull from remote to sync branches
+      run: git pull origin main --rebase
+
+    - name: Install Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '16'
+        node-version: '18'
 
     - name: Install dependencies
-      run: |
-        npm install
+      run: npm install
 
-    - name: Build the project
-      run: |
-        npm run build
+    - name: Build application
+      run: npm run build
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
